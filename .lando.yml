@@ -1,0 +1,71 @@
+name: devotionhub
+recipe: laravel
+
+config:
+  webroot: public
+  php: "8.4"
+  composer_version: "2.7.6"
+
+# env_file:
+#   - .env
+
+services:
+  node:
+    type: node:20
+    ports:
+      - "5173:5173"
+    scanner: false
+    sslExpose: false
+    overrides:
+      labels:
+        traefik.http.routers.devotionhub-vite-secured.rule: "Host(`devotionhub-vite.lndo.site`)"
+        traefik.http.routers.devotionhub-vite-secured.tls: "true"
+        traefik.http.routers.devotionhub-vite-secured.entrypoints: "https"
+        traefik.http.routers.devotionhub-vite-secured.service: "devotionhub-vite-svc"
+        traefik.http.services.devotionhub-vite-svc.loadbalancer.server.port: "5173"
+
+  phpmyadmin:
+    type: phpmyadmin:5.2
+    hosts:
+      - database
+
+database:
+  type: mysql:8.0
+  portforward: 3306
+  creds:
+    user: laravel
+    password: laravel
+    database: laravel
+    host: database
+
+proxy:
+  node:
+    - devotionhub-vite.lndo.site:5173
+
+tooling:
+  npm:
+    service: node
+    cmd: npm
+
+  npx:
+    service: node
+    cmd: npx
+
+  artisan:
+    service: appserver
+    cmd: php artisan
+
+  dev:
+    service: node
+    cmd: npm run dev
+    description: Start the Vite dev server (Lando's nginx already serves PHP)
+
+  queue:
+    service: appserver
+    cmd: php artisan queue:listen --tries=1 --timeout=0
+    description: Run the queue worker
+
+  pail:
+    service: appserver
+    cmd: php artisan pail --timeout=0
+    description: Tail application logs (lando's built-in 'logs' shows container logs)
