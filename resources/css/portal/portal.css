@@ -1,0 +1,51 @@
+/*
+ * Portal entry point - authenticated student pages.
+ *
+ * Login, dashboard, courses, lessons, progress, journal.
+ * Loaded only by resources/views/layouts/portal.blade.php, so selectors are
+ * global: nothing here can reach the site or admin.
+ */
+
+@import '../shared/theme.css';
+@import './auth.css';
+@import './shell.css';
+
+/*
+ * The portal design uses slightly warmer variants of two shared tokens than
+ * the public site does. Overriding them here keeps the site's palette intact.
+ */
+@theme {
+    --color-bg-deep: #ECE7DA;
+    --color-gold-soft: #E9D5A3;
+}
+
+/* Hide Alpine-controlled elements until Alpine has initialised. */
+[x-cloak] {
+    display: none !important;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/*
+ * Headings default to the display face. Colour is deliberately left to
+ * utilities: an element selector here would out-specify `text-white` on the
+ * dark cards and silently render them ink-on-black.
+ */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+}
+
+textarea {
+    resize: none;
+}

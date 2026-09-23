@@ -1,0 +1,48 @@
+/*
+ * Portal shell utilities.
+ *
+ * Everything else is expressed with Tailwind utilities in the Blade. These are
+ * here because utilities cannot express them cleanly: a data-URI mask, a
+ * diamond clip-path, and two keyframe animations. Lifted from the design.
+ */
+
+/* Diamond inside the brand mark. */
+@utility diamond {
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+/* Pulsing "live" indicator on the day-status pill. */
+@utility pulse-dot {
+    animation: portal-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes portal-pulse {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(0.9);
+    }
+}
+
+/* Shadows from the design's --shadow scale. */
+@utility shadow-card {
+    box-shadow:
+        0 14px 30px -22px rgb(7 7 7 / 0.18),
+        0 2px 6px -2px rgb(7 7 7 / 0.04);
+}
+
+@utility shadow-card-lg {
+    box-shadow:
+        0 40px 80px -50px rgb(7 7 7 / 0.28),
+        0 8px 20px -16px rgb(7 7 7 / 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pulse-dot {
+        animation: none;
+    }
+}

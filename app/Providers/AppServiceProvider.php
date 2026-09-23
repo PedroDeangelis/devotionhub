@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Carbon\CarbonImmutable;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
@@ -24,6 +25,19 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+        $this->configureBladeComponents();
+    }
+
+    /**
+     * Make the area layouts available as <x-layouts.portal>
+     * and <x-layouts.admin> without moving them out of resources/views/layouts.
+     */
+    protected function configureBladeComponents(): void
+    {
+        Blade::anonymousComponentPath(
+            resource_path('views/layouts'),
+            'layouts',
+        );
     }
 
     /**

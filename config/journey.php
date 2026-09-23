@@ -1,0 +1,95 @@
+<?php
+
+/*
+ * The seven movements of the 90-day journey.
+ *
+ * Presentation data for the landing page timeline. Lifted from the design
+ * source; move this to the database once journeys are modelled for real.
+ */
+
+return [
+    [
+        'key' => 'creation',
+        'day' => 'Day 1 — 8',
+        'name' => 'Creation',
+        'sub' => 'In the beginning…',
+        'state' => 'completed',
+        'num' => 'Movement 01',
+        'title' => 'Creation & Beginning',
+        'span' => 'Day 1 — 8 · 8 days',
+        'desc' => 'Walk through the first chapters where God speaks light into darkness, forms a garden, and calls it good — and where humanity learns, painfully, what it costs to walk away. The story the rest of the Bible answers.',
+        'readings' => ['Genesis 1', 'Genesis 2', 'Genesis 3', 'Genesis 6', 'Genesis 9'],
+    ],
+    [
+        'key' => 'abraham',
+        'day' => 'Day 9 — 18',
+        'name' => 'Abraham',
+        'sub' => 'A people of promise',
+        'state' => 'completed',
+        'num' => 'Movement 02',
+        'title' => 'Abraham & the Promise',
+        'span' => 'Day 9 — 18 · 10 days',
+        'desc' => 'God chooses one wandering family to bless every family on earth. You\'ll meet a man who believed before he could see — and the children, the laughter, and the tested faith that followed. The promise that holds the whole story together.',
+        'readings' => ['Genesis 12', 'Genesis 15', 'Genesis 17', 'Genesis 22', 'Genesis 28'],
+    ],
+    [
+        'key' => 'moses',
+        'day' => 'Day 19 — 32',
+        'name' => 'Moses',
+        'sub' => 'Out of Egypt',
+        'state' => 'current',
+        'num' => 'Movement 03',
+        'title' => 'Moses & the Exodus',
+        'span' => 'Day 19 — 32 · 14 days',
+        'desc' => 'God hears the cries of a people in slavery and answers in fire, sea, and law. You\'ll walk through the burning bush, the ten plagues, the parting of the Red Sea, and the giving of the commandments — discovering a God who rescues His people, then teaches them how to live free.',
+        'readings' => ['Exodus 3', 'Exodus 12', 'Exodus 14', 'Exodus 20', 'Leviticus 19'],
+    ],
+    [
+        'key' => 'kings',
+        'day' => 'Day 33 — 48',
+        'name' => 'Kings',
+        'sub' => 'A throne, a temple',
+        'state' => '',
+        'num' => 'Movement 04',
+        'title' => 'Kings & Kingdom',
+        'span' => 'Day 33 — 48 · 16 days',
+        'desc' => 'From a shepherd boy with a sling to a temple that fills with glory, then a kingdom torn in two — the story of what happens when God\'s people choose a king. You\'ll see both the beauty and the breaking, and begin to feel the ache for a different kind of throne.',
+        'readings' => ['1 Samuel 16', '2 Samuel 7', '1 Kings 8', 'Psalm 23', 'Psalm 51'],
+    ],
+    [
+        'key' => 'prophets',
+        'day' => 'Day 49 — 62',
+        'name' => 'Prophets',
+        'sub' => 'Voices in exile',
+        'state' => '',
+        'num' => 'Movement 05',
+        'title' => 'Prophets & Exile',
+        'span' => 'Day 49 — 62 · 14 days',
+        'desc' => 'When everything falls apart, God doesn\'t go silent. He sends voices — Isaiah, Jeremiah, Daniel — to call, to warn, and to comfort. You\'ll meet the hope that grew in exile and the promise of a coming One who would set everything right.',
+        'readings' => ['Isaiah 53', 'Jeremiah 31', 'Ezekiel 37', 'Daniel 7', 'Habakkuk 3'],
+    ],
+    [
+        'key' => 'jesus',
+        'day' => 'Day 63 — 82',
+        'name' => 'Jesus',
+        'sub' => 'The promise made flesh',
+        'state' => '',
+        'num' => 'Movement 06',
+        'title' => 'Jesus, the Promise Made Flesh',
+        'span' => 'Day 63 — 82 · 20 days',
+        'desc' => 'Everything the story has been pointing to walks into a village in Galilee. Two thousand years of waiting answered in one person. You\'ll read the Gospels slowly — the parables, the miracles, the meals — and meet Jesus the way the first disciples did.',
+        'readings' => ['Matthew 5', 'Mark 1', 'Luke 15', 'John 1', 'John 14'],
+    ],
+    [
+        'key' => 'resurrection',
+        'day' => 'Day 83 — 90',
+        'name' => 'Resurrection',
+        'sub' => 'Death undone',
+        'state' => '',
+        'num' => 'Movement 07',
+        'title' => 'Resurrection & New Creation',
+        'span' => 'Day 83 — 90 · 8 days',
+        'desc' => 'Death undone. The tomb empty. The whole story turned. You\'ll finish the journey at the cross, the resurrection, the upper room, and the new creation God is making — the story you now belong to.',
+        'readings' => ['Luke 24', 'John 20', 'Acts 2', 'Romans 8', 'Revelation 21'],
+    ],
+];

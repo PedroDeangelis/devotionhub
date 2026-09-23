@@ -1,0 +1,46 @@
+/*
+ * Shared design tokens for every area of the application.
+ *
+ * Imported by each area entry point (site.css, portal.css, admin.css) so the
+ * brand tokens stay a single source of truth. Contains tokens and the Tailwind
+ * import only - no selectors, so importing it emits no duplicate rules.
+ */
+
+@import 'tailwindcss';
+
+@source '../../views';
+@source '../../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    /* Brand / surfaces */
+    --color-bg: #F4F1EA;
+    --color-bg-deep: #ECECDF;
+    --color-paper: #FFFFFF;
+    --color-paper-2: #FAF7EE;
+
+    /* Text */
+    --color-ink: #070707;
+    --color-ink-2: #2A2A26;
+    --color-ink-3: #66625A;
+    --color-muted: #8A8780;
+
+    /* Borders */
+    --color-hair: #E4DED2;
+    --color-hair-soft: #C7C2B1;
+
+    /* Brand accent */
+    --color-gold: #B8873C;
+    --color-gold-soft: #D9B878;
+    --color-gold-light: #F4E9CC;
+
+    /* Secondary accent */
+    --color-olive: #6F7D4E;
+
+    /* Dark */
+    --color-black: #050505;
+
+    /* Typography */
+    --font-display: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-sans: "Manrope", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}

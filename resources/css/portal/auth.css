@@ -1,0 +1,19 @@
+/*
+ * Auth screen utilities.
+ *
+ * Everything else on the auth pages is expressed with Tailwind utilities in the
+ * Blade. These two are here because utilities cannot express them cleanly: a
+ * data-URI mask and a radial gradient. Both are lifted from the design source.
+ */
+
+/* Arrow glyph used inside buttons. Pair with `bg-current` so it inherits the
+   button's text colour. */
+@utility arrow-mask {
+    -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'><path d='M0 5h14M10 1l4 4-4 4' stroke='black' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat center / contain;
+    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'><path d='M0 5h14M10 1l4 4-4 4' stroke='black' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat center / contain;
+}
+
+/* Soft gold bloom behind the dark testimonial rail. */
+@utility rail-glow {
+    background: radial-gradient(circle, rgb(184 135 60 / 0.22), transparent 65%);
+}
